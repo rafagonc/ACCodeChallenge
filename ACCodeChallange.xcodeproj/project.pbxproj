@@ -22,6 +22,11 @@
 		2A8555BD21ED7EB500D496FC /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8555BC21ED7EB500D496FC /* Endpoint.swift */; };
 		2A8555BF21ED85B200D496FC /* RequestLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8555BE21ED85B200D496FC /* RequestLogger.swift */; };
 		2A8555C121ED86DC00D496FC /* DetailMovieRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8555C021ED86DC00D496FC /* DetailMovieRequest.swift */; };
+		2A8555C821ED8A8D00D496FC /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8555C321ED8A8D00D496FC /* Genre.swift */; };
+		2A8555C921ED8A8D00D496FC /* ProductionCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8555C421ED8A8D00D496FC /* ProductionCountry.swift */; };
+		2A8555CA21ED8A8D00D496FC /* SpokenLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8555C521ED8A8D00D496FC /* SpokenLanguage.swift */; };
+		2A8555CB21ED8A8D00D496FC /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8555C621ED8A8D00D496FC /* Movie.swift */; };
+		2A8555CC21ED8A8D00D496FC /* ProductionCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8555C721ED8A8D00D496FC /* ProductionCompany.swift */; };
 		2EC409BEB784E59C1AAB7711 /* Pods_ACCodeChallange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79682383677D2E111730A62E /* Pods_ACCodeChallange.framework */; };
 		49E37FDC76044B7DC93B84CC /* Pods_ACCodeChallangeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2365FC1040B86FC419AE7B43 /* Pods_ACCodeChallangeTests.framework */; };
 		5FC3345DB5FE035A932D003C /* Pods_ACCodeChallangeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A33C7037FF01A2DCA1948D1 /* Pods_ACCodeChallangeUITests.framework */; };
@@ -68,6 +73,11 @@
 		2A8555BC21ED7EB500D496FC /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		2A8555BE21ED85B200D496FC /* RequestLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLogger.swift; sourceTree = "<group>"; };
 		2A8555C021ED86DC00D496FC /* DetailMovieRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieRequest.swift; sourceTree = "<group>"; };
+		2A8555C321ED8A8D00D496FC /* Genre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		2A8555C421ED8A8D00D496FC /* ProductionCountry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductionCountry.swift; sourceTree = "<group>"; };
+		2A8555C521ED8A8D00D496FC /* SpokenLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpokenLanguage.swift; sourceTree = "<group>"; };
+		2A8555C621ED8A8D00D496FC /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		2A8555C721ED8A8D00D496FC /* ProductionCompany.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductionCompany.swift; sourceTree = "<group>"; };
 		5137D57B7CA6CFCABAD21D20 /* Pods-ACCodeChallangeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ACCodeChallangeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ACCodeChallangeTests/Pods-ACCodeChallangeTests.release.xcconfig"; sourceTree = "<group>"; };
 		79682383677D2E111730A62E /* Pods_ACCodeChallange.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ACCodeChallange.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		840810E8BF9136F8200D286B /* Pods-ACCodeChallangeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ACCodeChallangeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ACCodeChallangeUITests/Pods-ACCodeChallangeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +163,7 @@
 		2A85557721ED76A800D496FC /* ACCodeChallange */ = {
 			isa = PBXGroup;
 			children = (
+				2A8555C221ED89CA00D496FC /* Models */,
 				2A8555B421ED787500D496FC /* API */,
 				2A8555A821ED775A00D496FC /* Datasources */,
 				2A8555A721ED775000D496FC /* Controllers */,
@@ -251,6 +262,18 @@
 				2A8555C021ED86DC00D496FC /* DetailMovieRequest.swift */,
 			);
 			path = Requests;
+			sourceTree = "<group>";
+		};
+		2A8555C221ED89CA00D496FC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2A8555C321ED8A8D00D496FC /* Genre.swift */,
+				2A8555C621ED8A8D00D496FC /* Movie.swift */,
+				2A8555C721ED8A8D00D496FC /* ProductionCompany.swift */,
+				2A8555C421ED8A8D00D496FC /* ProductionCountry.swift */,
+				2A8555C521ED8A8D00D496FC /* SpokenLanguage.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -471,12 +494,17 @@
 				2A8555BD21ED7EB500D496FC /* Endpoint.swift in Sources */,
 				2A85557921ED76A800D496FC /* AppDelegate.swift in Sources */,
 				2A8555C121ED86DC00D496FC /* DetailMovieRequest.swift in Sources */,
+				2A8555CA21ED8A8D00D496FC /* SpokenLanguage.swift in Sources */,
 				2A8555B021ED783800D496FC /* MovieDetailViewController.swift in Sources */,
 				2A8555BB21ED7CA300D496FC /* RequestCaller.swift in Sources */,
 				2A8555B621ED788600D496FC /* Request.swift in Sources */,
 				2A8555AC21ED779C00D496FC /* MovieListViewController.swift in Sources */,
+				2A8555CC21ED8A8D00D496FC /* ProductionCompany.swift in Sources */,
+				2A8555CB21ED8A8D00D496FC /* Movie.swift in Sources */,
 				2A8555B921ED7B0800D496FC /* UpcomingMoviesRequest.swift in Sources */,
 				2A8555BF21ED85B200D496FC /* RequestLogger.swift in Sources */,
+				2A8555C821ED8A8D00D496FC /* Genre.swift in Sources */,
+				2A8555C921ED8A8D00D496FC /* ProductionCountry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
