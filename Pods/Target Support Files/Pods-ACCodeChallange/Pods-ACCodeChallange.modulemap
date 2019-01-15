@@ -1,0 +1,6 @@
+framework module Pods_ACCodeChallange {
+  umbrella header "Pods-ACCodeChallange-umbrella.h"
+
+  export *
+  module * { export * }
+}

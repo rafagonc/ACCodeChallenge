@@ -8,11 +8,18 @@
 
 import Foundation
 
-protocol APIRequest {
+enum Method: String  {
+    case POST = "POST"
+    case GET = "GET"
+    case PATCH = "PATCH"
+    case DELETE = "DELETE"
+    case PUT = "PUT"
+}
+
+protocol Request {
     
-    func path() -> String;
-//    func method() -> HTTPMethod;
+    func path(apiKey: String) -> String;
+    func method() -> Method;
     func headers() -> [String:String];
     func body() -> [String:Any];
-    func isAuthenticated() -> Bool
 }
