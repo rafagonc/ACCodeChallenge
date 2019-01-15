@@ -27,6 +27,7 @@
 		2A8555CA21ED8A8D00D496FC /* SpokenLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8555C521ED8A8D00D496FC /* SpokenLanguage.swift */; };
 		2A8555CB21ED8A8D00D496FC /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8555C621ED8A8D00D496FC /* Movie.swift */; };
 		2A8555CC21ED8A8D00D496FC /* ProductionCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8555C721ED8A8D00D496FC /* ProductionCompany.swift */; };
+		2A8555CF21ED8C8000D496FC /* MovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8555CE21ED8C8000D496FC /* MovieRepository.swift */; };
 		2EC409BEB784E59C1AAB7711 /* Pods_ACCodeChallange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79682383677D2E111730A62E /* Pods_ACCodeChallange.framework */; };
 		49E37FDC76044B7DC93B84CC /* Pods_ACCodeChallangeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2365FC1040B86FC419AE7B43 /* Pods_ACCodeChallangeTests.framework */; };
 		5FC3345DB5FE035A932D003C /* Pods_ACCodeChallangeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A33C7037FF01A2DCA1948D1 /* Pods_ACCodeChallangeUITests.framework */; };
@@ -78,6 +79,7 @@
 		2A8555C521ED8A8D00D496FC /* SpokenLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpokenLanguage.swift; sourceTree = "<group>"; };
 		2A8555C621ED8A8D00D496FC /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		2A8555C721ED8A8D00D496FC /* ProductionCompany.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductionCompany.swift; sourceTree = "<group>"; };
+		2A8555CE21ED8C8000D496FC /* MovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepository.swift; sourceTree = "<group>"; };
 		5137D57B7CA6CFCABAD21D20 /* Pods-ACCodeChallangeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ACCodeChallangeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ACCodeChallangeTests/Pods-ACCodeChallangeTests.release.xcconfig"; sourceTree = "<group>"; };
 		79682383677D2E111730A62E /* Pods_ACCodeChallange.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ACCodeChallange.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		840810E8BF9136F8200D286B /* Pods-ACCodeChallangeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ACCodeChallangeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ACCodeChallangeUITests/Pods-ACCodeChallangeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 		2A85557721ED76A800D496FC /* ACCodeChallange */ = {
 			isa = PBXGroup;
 			children = (
+				2A8555CD21ED8C7700D496FC /* Repositories */,
 				2A8555C221ED89CA00D496FC /* Models */,
 				2A8555B421ED787500D496FC /* API */,
 				2A8555A821ED775A00D496FC /* Datasources */,
@@ -274,6 +277,14 @@
 				2A8555C521ED8A8D00D496FC /* SpokenLanguage.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2A8555CD21ED8C7700D496FC /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				2A8555CE21ED8C8000D496FC /* MovieRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,6 +510,7 @@
 				2A8555BB21ED7CA300D496FC /* RequestCaller.swift in Sources */,
 				2A8555B621ED788600D496FC /* Request.swift in Sources */,
 				2A8555AC21ED779C00D496FC /* MovieListViewController.swift in Sources */,
+				2A8555CF21ED8C8000D496FC /* MovieRepository.swift in Sources */,
 				2A8555CC21ED8A8D00D496FC /* ProductionCompany.swift in Sources */,
 				2A8555CB21ED8A8D00D496FC /* Movie.swift in Sources */,
 				2A8555B921ED7B0800D496FC /* UpcomingMoviesRequest.swift in Sources */,
