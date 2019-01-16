@@ -63,31 +63,50 @@ class MovieListViewController: UIViewController, MovieTableViewAdapterDelegate, 
         self.searchBar.delegate = self
     }
     
+    //MARK: Loading
+    func startLoading() {
+        self.isLoadingData = true
+        if self.page == 1 {
+            self.movieTableViewAdapter.update(movies: [], tableView: tableView, deleteCurrentData: true)
+            self.tableView.separatorStyle = .none
+            self.activityIndicator.startAnimating()
+        }
+    }
+    
+    func stopLoading() {
+        self.isLoadingData = false
+        if self.page == 1 {
+            self.tableView.separatorStyle = .singleLine
+            self.activityIndicator.stopAnimating()
+        }
+    }
+    
     //MARK: Services
     func getUpcomingMovies() {
-        isLoadingData = true
+        self.startLoading()
             movieRepository.listUpcomingMovies(page: self.page, success: { [weak self] (movies) in
                 self?.movieTableViewAdapter.update(movies:movies, tableView:  self?.tableView, deleteCurrentData:self?.page == 1)
-                self?.isLoadingData = false
+                self?.stopLoading()
             }) { [weak self] (error) in
-                self?.isLoadingData = false
+                self?.stopLoading()
                 self?.showErrorAlert(title: "Error", message: error)
             }
     }
     
     func getMovieBySearchText() {
-        isLoadingData = true
+        self.startLoading()
         if let searchText = self.searchText {
             movieRepository.searchMovies(query: searchText, page: self.page, success: { [weak self] (movies) in
                 self?.movieTableViewAdapter.update(movies:movies, tableView:  self?.tableView, deleteCurrentData:self?.page == 1)
-                self?.isLoadingData = false
+                self?.stopLoading()
             }) { [weak self] (error) in
-                self?.isLoadingData = false
+                self?.stopLoading()
                 self?.showErrorAlert(title: "Error", message: error)
             }
         }
     }
     
+    //MARK: Helpers
     func isSearching() -> Bool {
         return self.searchText != nil
     }
