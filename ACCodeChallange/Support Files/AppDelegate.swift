@@ -23,6 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
         self.window?.makeKeyAndVisible()
         
+        let mr = MovieRepository()
+        mr.listUpcomingMovies(page: 1, success: { (movies) in
+            print(movies)
+        }) { (error) in
+            
+        }
+        
         return true
     }
 

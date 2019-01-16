@@ -10,7 +10,7 @@ import SwiftyJSON
 class Movie {
 
     var adult : Bool!
-    var backdropPath : String!
+    var backdropPath : String?
     var budget : Int!
     var genres : [Genre]!
     var homepage : String!
@@ -20,7 +20,7 @@ class Movie {
     var originalTitle : String!
     var overview : String!
     var popularity : Float!
-    var posterPath: String!
+    var posterPath: String?
     var productionCompanies : [ProductionCompany]!
     var productionCountries : [ProductionCountry]!
     var releaseDate : String!
@@ -39,9 +39,18 @@ class Movie {
 			return
 		}
         
+        if let _ = json["poster_path"].string {
+            posterPath = "https://image.tmdb.org/t/p/w500/\(json["poster_path"].stringValue)?api_key=\(RequestCaller.APIKey)"
+        }
+        
+        
+        if let _ = json["backdrop_path"].string {
+            backdropPath = "https://image.tmdb.org/t/p/w500/\(json["backdrop_path"].stringValue)?api_key=\(RequestCaller.APIKey)"
+        }
+        
         adult = json["adult"].boolValue
-        posterPath = json["posterPath"].stringValue
-        backdropPath = json["backdrop_path"].stringValue
+        
+        backdropPath = "https://image.tmdb.org/t/p/w500/\(json["backdrop_path"].stringValue)?api_key=\(RequestCaller.APIKey)"
         budget = json["budget"].intValue
         homepage = json["homepage"].stringValue
         id = json["id"].intValue
@@ -60,32 +69,47 @@ class Movie {
         voteAverage = json["vote_average"].floatValue
         voteCount = json["vote_count"].intValue
         
+        setGenres(json: json)
+        setProductionCompaies(json: json)
+        setProductionCountries(json: json)
+        setSpokenLanguages(json: json)
+
+	}
+    
+    func setGenres(json: JSON) {
         genres = [Genre]()
-        let genresArray = json["genres"].arrayValue
+        let genresArray = json["genres"].array ?? []
         for genresJson in genresArray{
             let value = Genre(fromJson: genresJson)
             genres.append(value)
         }
-        
+    }
+    func setProductionCompaies(json: JSON) {
         productionCompanies = [ProductionCompany]()
-        let productionCompaniesArray = json["production_companies"].arrayValue
+        let productionCompaniesArray = json["production_companies"].array ?? []
         for productionCompaniesJson in productionCompaniesArray{
             let value = ProductionCompany(fromJson: productionCompaniesJson)
             productionCompanies.append(value)
         }
+    }
+    
+    func setProductionCountries(json: JSON) {
         productionCountries = [ProductionCountry]()
-        let productionCountriesArray = json["production_countries"].arrayValue
+        let productionCountriesArray = json["production_countries"].array ?? []
         for productionCountriesJson in productionCountriesArray{
             let value = ProductionCountry(fromJson: productionCountriesJson)
             productionCountries.append(value)
         }
-
+    }
+    
+    
+    func setSpokenLanguages(json: JSON) {
         spokenLanguages = [SpokenLanguage]()
-        let spokenLanguagesArray = json["spoken_languages"].arrayValue
+        let spokenLanguagesArray = json["spoken_languages"].array ?? []
         for spokenLanguagesJson in spokenLanguagesArray{
             let value = SpokenLanguage(fromJson: spokenLanguagesJson)
             spokenLanguages.append(value)
         }
-	}
+    }
 
 }

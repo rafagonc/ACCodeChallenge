@@ -27,7 +27,10 @@ class RequestLogger {
         if let body = response.data {
             print("Response Body: \(String.init(data: body, encoding: .utf8) ?? "Could not parse response body as a string")")
         }
-        print("Response Body: \(String(describing: String.init(data: response.data ?? Data.init(), encoding: .utf8)))")
+        let dataAsString = String(describing: String.init(data: response.data ?? Data.init(), encoding: .utf8))
+        let index = dataAsString.index(dataAsString.startIndex, offsetBy: 120)
+        print("Response Body: \(dataAsString[..<index]))")
+        
         if let error = response.error {
             print("Response Error: \(error)")
         }

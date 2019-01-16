@@ -15,6 +15,7 @@ class RequestCaller {
     static let APIKey = "1f54bd990f1cdfb230adb312546d765d"
     
     static func getAlamofireHTTPMethod(method: Method) -> HTTPMethod {
+        // Convert string to the alamofire http method enum so we dont have to import alamofire every Request implementation
         return ["POST": HTTPMethod.post,
                 "GET": HTTPMethod.get,
                 "PATCH": HTTPMethod.patch,

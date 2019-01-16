@@ -19,7 +19,7 @@ class UpcomingMoviesRequest: Request {
     }
     
     func path(apiKey: String) -> String {
-        return "/movies/upcoming?page=\(self.page)&language=\(self.language)&api_key=\(apiKey)"
+        return "/movie/upcoming?page=\(self.page)&language=\(self.language)&api_key=\(apiKey)"
     }
     
     func method() -> Method {
