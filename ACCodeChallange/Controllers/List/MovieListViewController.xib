@@ -15,6 +15,7 @@
                 <outlet property="activityIndicator" destination="Mb3-0u-4wE" id="eKS-Er-NtH"/>
                 <outlet property="searchBar" destination="cyS-7D-enm" id="RyW-pX-tLx"/>
                 <outlet property="tableView" destination="IOY-s5-eAf" id="Qdc-Qy-AoU"/>
+                <outlet property="titleLabel" destination="8b7-tF-ajo" id="C6a-3U-jPb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -14,6 +14,7 @@ class MovieListViewController: UIViewController, MovieTableViewAdapterDelegate, 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     //MARK: Properties
     let movieRepository = MovieRepository()
@@ -41,7 +42,15 @@ class MovieListViewController: UIViewController, MovieTableViewAdapterDelegate, 
         self.setupSearchBar()
         self.setupTableView()
     
-        self.getUpcomingMovies()
+        getGenres { [weak self] (genreTable) in
+            self?.movieTableViewAdapter.genreTable = genreTable
+            self?.getUpcomingMovies()
+        }
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.setupNavigationBar()
     }
     
     //MARK: Setups
@@ -51,13 +60,14 @@ class MovieListViewController: UIViewController, MovieTableViewAdapterDelegate, 
         
         self.movieTableViewAdapter.delegate = self
     }
-    
     func setupNavigationBar() {
         if let navController = self.navigationController {
             navController.navigationBar.isHidden = true
+            navController.interactivePopGestureRecognizer?.isEnabled = false
+            navController.navigationBar.isTranslucent = true
+
         }
     }
-    
     func setupSearchBar() {
         self.searchBar.addDoneToolbar{}
         self.searchBar.delegate = self
@@ -82,6 +92,15 @@ class MovieListViewController: UIViewController, MovieTableViewAdapterDelegate, 
     }
     
     //MARK: Services
+    
+    func getGenres(genresServiceSuccess: @escaping (GenreTable) -> ()) {
+        movieRepository.getGenres(success: { (genreTable) in
+            genresServiceSuccess(genreTable)
+        }) { [weak self] (error) in
+            self?.showErrorAlert(title: "Error", message: error)
+        }
+    }
+    
     func getUpcomingMovies() {
         self.startLoading()
             movieRepository.listUpcomingMovies(page: self.page, success: { [weak self] (movies) in
@@ -121,25 +140,28 @@ class MovieListViewController: UIViewController, MovieTableViewAdapterDelegate, 
     
     //MARK: Delegates
     func movieTableViewAdapterWantsToPaginate() {
-        if isLoadingData == false {
+        if self.isLoadingData == false {
             page += 1
             loadMoreData()
         }
     }
     
     func movieTableViewAdapterDidSelectMovie(movie: Movie) {
+        self.navigationController?.pushViewController(MovieDetailViewController(movieId: movie.id), animated: true)
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.page = 1
         if searchText.count == 0 {
             self.searchText = nil
-            self.page = 1
-            self.loadMoreData()
+            self.titleLabel.text = "Upcoming Movies"
+            self.title = self.titleLabel.text
         } else {
             self.searchText = searchText
-            self.page = 1
-            loadMoreData()
+            self.titleLabel.text = searchText
+            self.title = self.titleLabel.text
         }
+        loadMoreData()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

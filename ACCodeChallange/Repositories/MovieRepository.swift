@@ -31,8 +31,18 @@ class MovieRepository {
         }
     }
     
-    func detailMovie(movie_id: Int, success: @escaping (Movie) -> (), failure: @escaping (String) -> ()) {
-        RequestCaller.makeRequest(request: DetailMovieRequest(movie_id: movie_id), success: { (response) -> (Void) in
+    func getGenres(success: @escaping (GenreTable) -> (), failure: @escaping (String) -> ()) {
+        RequestCaller.makeRequest(request: GenresListRequest(), success: { (response) -> (Void) in
+            success(GenreTable(genres: ((response["genres"].array ?? []).map({ (response_item) -> Genre in
+                return Genre(fromJson: response_item)
+            }))))
+        }) { (error) -> (Void) in
+            failure(error)
+        }
+    }
+    
+    func detailMovie(movieId: Int, success: @escaping (Movie) -> (), failure: @escaping (String) -> ()) {
+        RequestCaller.makeRequest(request: DetailMovieRequest(movieId: movieId), success: { (response) -> (Void) in
             success(Movie(fromJson: response))
         }) { (error) -> (Void) in
             failure(error)

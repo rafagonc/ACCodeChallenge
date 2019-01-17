@@ -13,11 +13,13 @@ class MovieItemTableViewCell: UITableViewCell {
 
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var genreLabel: UILabel!
+    @IBOutlet weak var releaseDateLabel: UILabel!
 
-    func setMovieContent(movie: Movie) {
-        self.titleLabel.text = movie.originalTitle
-        self.subtitleLabel.text = movie.overview
+    func setMovieContent(movie: Movie, genreTable: GenreTable?) {
+        self.titleLabel.text = movie.title
+        self.genreLabel.text = movie.getGenresJoinedByComma(genreTable: genreTable)
+        self.releaseDateLabel.text = movie.releaseDate
         if let posterPath = movie.posterPath {
             self.posterImageView.kf.indicatorType = .activity
             self.posterImageView.kf.setImage(with: URL.init(string: posterPath))

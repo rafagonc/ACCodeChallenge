@@ -10,7 +10,7 @@ import UIKit
 
 extension UINavigationBar {
     
-    func whiteNavigationBar() {
+    func clearNavigationBar() {
         self.barTintColor = UIColor.white
         self.tintColor = UIColor.darkGray
         self.shadowImage = UIImage.init()

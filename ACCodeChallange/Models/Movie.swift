@@ -13,6 +13,7 @@ class Movie {
     var backdropPath : String?
     var budget : Int!
     var genres : [Genre]!
+    var genreIds : [Int]!
     var homepage : String!
     var id : Int!
     var imdbId : String!
@@ -48,8 +49,9 @@ class Movie {
             backdropPath = "https://image.tmdb.org/t/p/w500/\(json["backdrop_path"].stringValue)?api_key=\(RequestCaller.APIKey)"
         }
         
-        adult = json["adult"].boolValue
+        releaseDate = (json["release_date"].string ?? "").split(separator: "-").reversed().joined(separator: "/")
         
+        adult = json["adult"].boolValue
         backdropPath = "https://image.tmdb.org/t/p/w500/\(json["backdrop_path"].stringValue)?api_key=\(RequestCaller.APIKey)"
         budget = json["budget"].intValue
         homepage = json["homepage"].stringValue
@@ -59,7 +61,6 @@ class Movie {
         originalTitle = json["original_title"].stringValue
         overview = json["overview"].stringValue
         popularity = json["popularity"].floatValue
-        releaseDate = json["release_date"].stringValue
         revenue = json["revenue"].intValue
         runtime = json["runtime"].intValue
         status = json["status"].stringValue
@@ -69,12 +70,33 @@ class Movie {
         voteAverage = json["vote_average"].floatValue
         voteCount = json["vote_count"].intValue
         
+        setGenresIds(json: json)
         setGenres(json: json)
         setProductionCompaies(json: json)
         setProductionCountries(json: json)
         setSpokenLanguages(json: json)
 
 	}
+    
+    func getGenresJoinedByComma() -> String{
+        return (self.genres.map { $0.name }).joined(separator: ", ")
+    }
+    
+    func getGenresJoinedByComma(genreTable: GenreTable?) -> String {
+        if let gt = genreTable {
+            return self.genreIds.map{ gt.findGenreNameById(id: $0) ?? "" }.joined(separator: ", ")
+        }
+        return ""
+    }
+    
+    func setGenresIds(json: JSON) {
+        genreIds = [Int]()
+        let genresArray = json["genre_ids"].array ?? []
+        for genresJson in genresArray{
+            let value = genresJson.intValue
+            genreIds.append(value)
+        }
+    }
     
     func setGenres(json: JSON) {
         genres = [Genre]()

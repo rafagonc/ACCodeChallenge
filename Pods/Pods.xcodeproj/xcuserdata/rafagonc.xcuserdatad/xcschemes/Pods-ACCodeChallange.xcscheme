@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1010"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A9B7D0214CA3F14343ABF70CF397F642"
+               BlueprintIdentifier = "C726FF72EB3F8922A3BC78B64D279534"
                BuildableName = "Pods_ACCodeChallange.framework"
                BlueprintName = "Pods-ACCodeChallange"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A9B7D0214CA3F14343ABF70CF397F642"
+            BlueprintIdentifier = "C726FF72EB3F8922A3BC78B64D279534"
             BuildableName = "Pods_ACCodeChallange.framework"
             BlueprintName = "Pods-ACCodeChallange"
             ReferencedContainer = "container:Pods.xcodeproj">

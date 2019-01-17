@@ -10,16 +10,16 @@ import Foundation
 
 class DetailMovieRequest: Request {
     
-    let movie_id : Int
+    let movieId : Int
     let language : String
     
-    init(movie_id: Int, language: String = "en-US") {
-        self.movie_id = movie_id
+    init(movieId: Int, language: String = "en-US") {
+        self.movieId = movieId
         self.language = language
     }
     
     func path(apiKey: String) -> String {
-        return "/movie/\(self.movie_id)?language=\(self.language)&api_key=\(apiKey)"
+        return "/movie/\(self.movieId)?api_key=\(apiKey)&language=\(self.language)"
     }
     
     func method() -> Method {

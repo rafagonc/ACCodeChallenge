@@ -37,6 +37,8 @@
 		2A8555CB21ED8A8D00D496FC /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8555C621ED8A8D00D496FC /* Movie.swift */; };
 		2A8555CC21ED8A8D00D496FC /* ProductionCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8555C721ED8A8D00D496FC /* ProductionCompany.swift */; };
 		2A8555CF21ED8C8000D496FC /* MovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8555CE21ED8C8000D496FC /* MovieRepository.swift */; };
+		2AA90A1521F02A3D00CDCD34 /* GenresListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA90A1421F02A3D00CDCD34 /* GenresListRequest.swift */; };
+		2AA90A1721F02B6900CDCD34 /* GenreTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA90A1621F02B6900CDCD34 /* GenreTable.swift */; };
 		2EC409BEB784E59C1AAB7711 /* Pods_ACCodeChallange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79682383677D2E111730A62E /* Pods_ACCodeChallange.framework */; };
 		49E37FDC76044B7DC93B84CC /* Pods_ACCodeChallangeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2365FC1040B86FC419AE7B43 /* Pods_ACCodeChallangeTests.framework */; };
 		5FC3345DB5FE035A932D003C /* Pods_ACCodeChallangeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A33C7037FF01A2DCA1948D1 /* Pods_ACCodeChallangeUITests.framework */; };
@@ -98,6 +100,8 @@
 		2A8555C621ED8A8D00D496FC /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		2A8555C721ED8A8D00D496FC /* ProductionCompany.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductionCompany.swift; sourceTree = "<group>"; };
 		2A8555CE21ED8C8000D496FC /* MovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepository.swift; sourceTree = "<group>"; };
+		2AA90A1421F02A3D00CDCD34 /* GenresListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresListRequest.swift; sourceTree = "<group>"; };
+		2AA90A1621F02B6900CDCD34 /* GenreTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreTable.swift; sourceTree = "<group>"; };
 		5137D57B7CA6CFCABAD21D20 /* Pods-ACCodeChallangeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ACCodeChallangeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ACCodeChallangeTests/Pods-ACCodeChallangeTests.release.xcconfig"; sourceTree = "<group>"; };
 		79682383677D2E111730A62E /* Pods_ACCodeChallange.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ACCodeChallange.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		840810E8BF9136F8200D286B /* Pods-ACCodeChallangeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ACCodeChallangeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ACCodeChallangeUITests/Pods-ACCodeChallangeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -314,6 +318,7 @@
 				2A8555B821ED7B0800D496FC /* UpcomingMoviesRequest.swift */,
 				2A8555C021ED86DC00D496FC /* DetailMovieRequest.swift */,
 				2A055C9A21EEE51C0028D644 /* SearchMoviesRequest.swift */,
+				2AA90A1421F02A3D00CDCD34 /* GenresListRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -326,6 +331,7 @@
 				2A8555C721ED8A8D00D496FC /* ProductionCompany.swift */,
 				2A8555C421ED8A8D00D496FC /* ProductionCountry.swift */,
 				2A8555C521ED8A8D00D496FC /* SpokenLanguage.swift */,
+				2AA90A1621F02B6900CDCD34 /* GenreTable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -479,12 +485,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ACCodeChallange/Pods-ACCodeChallange-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Blurry/Blurry.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Blurry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -569,10 +577,12 @@
 				2A8555B621ED788600D496FC /* Request.swift in Sources */,
 				2A055C9321EED1EC0028D644 /* UITextField.swift in Sources */,
 				2A8555AC21ED779C00D496FC /* MovieListViewController.swift in Sources */,
+				2AA90A1721F02B6900CDCD34 /* GenreTable.swift in Sources */,
 				2A8555CF21ED8C8000D496FC /* MovieRepository.swift in Sources */,
 				2A8555CC21ED8A8D00D496FC /* ProductionCompany.swift in Sources */,
 				2A055C9521EED3850028D644 /* UIViewController.swift in Sources */,
 				2A8555CB21ED8A8D00D496FC /* Movie.swift in Sources */,
+				2AA90A1521F02A3D00CDCD34 /* GenresListRequest.swift in Sources */,
 				2A8555B921ED7B0800D496FC /* UpcomingMoviesRequest.swift in Sources */,
 				2A8555BF21ED85B200D496FC /* RequestLogger.swift in Sources */,
 				2A8555C821ED8A8D00D496FC /* Genre.swift in Sources */,

@@ -38,18 +38,27 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friends hatch a plot to retrieve a stolen cat by posing as drug dealers for a street gang." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUY-Xp-VpL">
-                        <rect key="frame" x="81" y="33.5" width="215" height="45.5"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Action, Comedy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUY-Xp-VpL">
+                        <rect key="frame" x="81" y="33.5" width="215" height="16.5"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23/02/2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvE-Xp-tkX">
+                        <rect key="frame" x="81" y="54" width="215" height="17.5"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="gvE-Xp-tkX" secondAttribute="trailing" constant="8" id="1vS-ni-xTq"/>
                     <constraint firstItem="kyd-3j-0WJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="2U0-KH-vyD"/>
+                    <constraint firstItem="gvE-Xp-tkX" firstAttribute="leading" secondItem="kyd-3j-0WJ" secondAttribute="trailing" constant="8" id="LyJ-cg-eMJ"/>
                     <constraint firstItem="soi-ZQ-FTQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="MNn-5W-wIp"/>
                     <constraint firstAttribute="trailing" secondItem="soi-ZQ-FTQ" secondAttribute="trailing" constant="8" id="V4J-6u-gJX"/>
                     <constraint firstItem="kyd-3j-0WJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="VVB-zm-gfk"/>
+                    <constraint firstItem="gvE-Xp-tkX" firstAttribute="top" secondItem="pUY-Xp-VpL" secondAttribute="bottom" constant="4" id="leo-h9-BtG"/>
                     <constraint firstItem="pUY-Xp-VpL" firstAttribute="leading" secondItem="kyd-3j-0WJ" secondAttribute="trailing" constant="8" id="oFf-a4-jbQ"/>
                     <constraint firstItem="pUY-Xp-VpL" firstAttribute="top" secondItem="soi-ZQ-FTQ" secondAttribute="bottom" constant="5" id="pZf-mL-dim"/>
                     <constraint firstAttribute="trailingMargin" secondItem="pUY-Xp-VpL" secondAttribute="trailing" constant="8" id="rVy-DL-pPX"/>
@@ -59,8 +68,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="genreLabel" destination="pUY-Xp-VpL" id="gxz-Sr-Dpf"/>
                 <outlet property="posterImageView" destination="kyd-3j-0WJ" id="kRt-TI-f0d"/>
-                <outlet property="subtitleLabel" destination="pUY-Xp-VpL" id="OCX-IY-zvG"/>
+                <outlet property="releaseDateLabel" destination="gvE-Xp-tkX" id="zVX-Y8-JxY"/>
                 <outlet property="titleLabel" destination="soi-ZQ-FTQ" id="pIH-Mc-xqa"/>
             </connections>
             <point key="canvasLocation" x="52.799999999999997" y="78.260869565217391"/>

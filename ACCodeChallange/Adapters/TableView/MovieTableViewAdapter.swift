@@ -19,6 +19,7 @@ class MovieTableViewAdapter: NSObject, UITableViewDelegate, UITableViewDataSourc
     
     var movies : [Movie]
     var delegate : MovieTableViewAdapterDelegate?
+    var genreTable : GenreTable?
     
     init(movies: [Movie]) {
         self.movies = movies
@@ -48,7 +49,7 @@ class MovieTableViewAdapter: NSObject, UITableViewDelegate, UITableViewDataSourc
         if cell == nil {
             cell = Bundle.main.loadNibNamed(cellID, owner: self, options: nil)?.first as? MovieItemTableViewCell
         }
-        cell?.setMovieContent(movie: self.movies[indexPath.row])
+        cell?.setMovieContent(movie: self.movies[indexPath.row], genreTable: self.genreTable)
         cell?.selectionStyle = .none
         cell?.accessoryType = .disclosureIndicator
         return cell!
@@ -62,7 +63,7 @@ class MovieTableViewAdapter: NSObject, UITableViewDelegate, UITableViewDataSourc
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let yOffset = scrollView.contentOffset.y - (scrollView.contentSize.height - scrollView.frame.size.height)
-        if yOffset > 40 {
+        if yOffset > -10 {
             if let delegate = self.delegate {
                 delegate.movieTableViewAdapterWantsToPaginate()
             }
