@@ -1,6 +1,0 @@
-framework module Pods_ACCodeChallangeTests {
-  umbrella header "Pods-ACCodeChallangeTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
