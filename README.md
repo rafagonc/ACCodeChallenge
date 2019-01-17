@@ -11,7 +11,7 @@
 ## Third party libraries
 
 - `Alamofire` - Framework built to make HTTP requests with few lines of code, keeping it simple and short
-- `Kingfisher` - Convenient frame to download images into UIImageView, also implements caching for making less http requests
+- `Kingfisher` - Convenient framework to download images into UIImageView, also implements caching for making less http requests
 - `SwiftyJSON` - JSON Parser with model generator
 
 
