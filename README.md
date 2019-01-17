@@ -2,8 +2,10 @@
 
 ## Build Instructions
 
-- Open `ACCodeChallenge.xcworkspace`
-- Run `pod install` to install third-party repositories
+- `git clone https://github.com/rafagonc/ACCodeChallenge.git`
+- `cd ACCodeChallenge`
+- `pod install` to install third-party repositories
+- `open -a xcode ACCodeChallenge.xcworkspace`
 - `Cmd + R` to run the app
 
 ## Third party libraries
