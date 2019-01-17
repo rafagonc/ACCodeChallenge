@@ -4,7 +4,7 @@
 
 - `git clone https://github.com/rafagonc/ACCodeChallenge.git`
 - `cd ACCodeChallenge`
-- `pod install` to install third-party repositories
+- `pod install` to install third-party frameworks
 - `open -a xcode ACCodeChallenge.xcworkspace`
 - `Cmd + R` to run the app
 
