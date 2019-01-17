@@ -1,4 +1,4 @@
-# Arctouch codign challenge
+# Arctouch Coding Challenge
 
 ## Build Instructions
 
