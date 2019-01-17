@@ -7,7 +7,6 @@ target 'ACCodeChallange' do
   pod 'Alamofire'
   pod 'Kingfisher'
   pod 'SwiftyJSON'
-  pod 'Blurry', '~> 0.1.0'
   
   # Pods for ACCodeChallange
 
