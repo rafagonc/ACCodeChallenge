@@ -15,5 +15,5 @@
 
 ## Screenshots
 
-![Alt text](Screenshots/list.png?raw=true "List" | width = 300)
-![Alt text](Screenshots/detail.png?raw=true "Detail" | width = 300)
+![Alt text](Screenshots/list.png?raw=true "List" | width=300)
+![Alt text](Screenshots/detail.png?raw=true "Detail" | width=300)
