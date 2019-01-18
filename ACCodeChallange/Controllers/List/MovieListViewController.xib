@@ -39,7 +39,7 @@
                             </label>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search by movie name" translatesAutoresizingMaskIntoConstraints="NO" id="cyS-7D-enm">
                                 <rect key="frame" x="0.0" y="51" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
                                     <string>Title</string>
