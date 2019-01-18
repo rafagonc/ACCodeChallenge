@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MovieListViewController: UIViewController, MovieTableViewAdapterDelegate, UISearchBarDelegate {
+class MovieListViewController: UIViewController {
 
     //MARK: UI Components
     @IBOutlet weak var tableView: UITableView!
@@ -48,7 +48,6 @@ class MovieListViewController: UIViewController, MovieTableViewAdapterDelegate, 
         }
         
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         self.setupNavigationBar()
     }
@@ -92,7 +91,6 @@ class MovieListViewController: UIViewController, MovieTableViewAdapterDelegate, 
     }
     
     //MARK: Services
-    
     func getGenres(genresServiceSuccess: @escaping (GenreTable) -> ()) {
         movieRepository.getGenres(success: { (genreTable) in
             genresServiceSuccess(genreTable)
@@ -137,8 +135,11 @@ class MovieListViewController: UIViewController, MovieTableViewAdapterDelegate, 
             self.getUpcomingMovies()
         }
     }
-    
-    //MARK: Delegates
+
+}
+
+extension MovieListViewController : MovieTableViewAdapterDelegate {
+
     func movieTableViewAdapterWantsToPaginate() {
         if self.isLoadingData == false {
             page += 1
@@ -149,6 +150,10 @@ class MovieListViewController: UIViewController, MovieTableViewAdapterDelegate, 
     func movieTableViewAdapterDidSelectMovie(movie: Movie) {
         self.navigationController?.pushViewController(MovieDetailViewController(movieId: movie.id), animated: true)
     }
+    
+}
+
+extension MovieListViewController : UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.page = 1
@@ -167,5 +172,4 @@ class MovieListViewController: UIViewController, MovieTableViewAdapterDelegate, 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
-
 }
